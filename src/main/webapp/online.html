@@ -1,0 +1,170 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Test</title>-->
+
+<!--    &lt;!&ndash;    <script>&ndash;&gt;-->
+<!--    &lt;!&ndash;        // fetch("/restservices/list")&ndash;&gt;-->
+<!--    &lt;!&ndash;        //  .then  (response => Promise.all([response.status, response.json()]))&ndash;&gt;-->
+<!--    &lt;!&ndash;        //  .then (function([status, data]) {&ndash;&gt;-->
+<!--    &lt;!&ndash;        //      if(status === 404)&ndash;&gt;-->
+<!--    &lt;!&ndash;        //      console.log(data);&ndash;&gt;-->
+<!--    &lt;!&ndash;        //&ndash;&gt;-->
+<!--    &lt;!&ndash;        // });&ndash;&gt;-->
+<!--    &lt;!&ndash;        <script>&ndash;&gt;-->
+<!--    &lt;!&ndash;        async  function start(){&ndash;&gt;-->
+<!--    &lt;!&ndash;            let response = await fetch("/restservices/list");&ndash;&gt;-->
+<!--    &lt;!&ndash;            let data = await response.json();&ndash;&gt;-->
+
+<!--    &lt;!&ndash;            if (response.status == 200){&ndash;&gt;-->
+<!--    &lt;!&ndash;                console.log(data);&ndash;&gt;-->
+<!--    &lt;!&ndash;            }&ndash;&gt;-->
+<!--    &lt;!&ndash;        }&ndash;&gt;-->
+
+<!--    &lt;!&ndash;        start();&ndash;&gt;-->
+
+<!--    &lt;!&ndash;    </script>&ndash;&gt;-->
+
+<!--    &lt;!&ndash;    // function.createshopper(){&ndash;&gt;-->
+<!--    &lt;!&ndash;    //     let formdata = new FormData(document.querySelector("#postcustomer"));&ndash;&gt;-->
+<!--    &lt;!&ndash;    //     let requestdata = {&ndash;&gt;-->
+<!--    &lt;!&ndash;    //         name: formdata.get("shopperName")&ndash;&gt;-->
+<!--    &lt;!&ndash;    //     }&ndash;&gt;-->
+<!--    &lt;!&ndash;    //     let fetchoptions= {&ndash;&gt;-->
+<!--    &lt;!&ndash;    //         method: "POST",&ndash;&gt;-->
+<!--    &lt;!&ndash;    //         body: JSON.stringify(requestdata);&ndash;&gt;-->
+<!--    &lt;!&ndash;    //         headers: {contentType: "application/json"}&ndash;&gt;-->
+<!--    &lt;!&ndash;    //     }&ndash;&gt;-->
+<!--    &lt;!&ndash;    //&ndash;&gt;-->
+<!--    &lt;!&ndash;    //     fetch("/restservices/shopper", fetchoptions&ndash;&gt;-->
+<!--    &lt;!&ndash;    //     .then(response => response.json()))&ndash;&gt;-->
+<!--    &lt;!&ndash;    //     // .then(function(response){&ndash;&gt;-->
+<!--    &lt;!&ndash;    //     //     return response.json();&ndash;&gt;-->
+<!--    &lt;!&ndash;    //     .then(function(json){&ndash;&gt;-->
+<!--    &lt;!&ndash;    //         document.querySelector()&ndash;&gt;-->
+<!--    &lt;!&ndash;    //&ndash;&gt;-->
+<!--    &lt;!&ndash;    //     }&ndash;&gt;-->
+<!--    &lt;!&ndash;    // }&ndash;&gt;-->
+<!--    &lt;!&ndash;    // windows.addEventListener("load", function() {&ndash;&gt;-->
+<!--    &lt;!&ndash;    //     document.queryselector(#postshopper).addEventListener(createshopper)&ndash;&gt;-->
+<!--    &lt;!&ndash;    // });&ndash;&gt;-->
+<!--    &lt;!&ndash;    </script>&ndash;&gt;-->
+<!--</head>-->
+<!--<body>-->
+<!--<h1>What API call to test? </h1>-->
+<!--<h2>Should work:</h2>-->
+<!--<ul>-->
+<!--    <li>-->
+<!--        <a href="/restservices/list">See all lists</a>-->
+<!--    </li>-->
+<!--    <li>-->
+<!--        <a href="/restservices/list/initialList">See the first list</a>-->
+<!--    </li>-->
+<!--    <li>-->
+<!--        <a href="/restservices/list/anotherList">See the other list</a>-->
+<!--    </li>-->
+<!--    <li>-->
+<!--        <a href="/restservices/shopper">See all Shoppers</a>-->
+<!--    </li>-->
+<!--    <li>-->
+<!--        <a href="/restservices/online">See all online</a>-->
+<!--    </li>-->
+<!--    <li>-->
+<!--        <a href="/restservices/shopper/Dum-Dum">See all lists belonging to-->
+<!--            Dum-Dum</a>-->
+<!--    </li>-->
+<!--    <li>-->
+<!--        <a href="/restservices/product">See all Products</a>-->
+<!--    </li>-->
+<!--</ul>-->
+<!--<h2>Should give clean error message</h2>-->
+<!--<ul>-->
+<!--    <li>-->
+<!--        <a href="/restservices/list/nonExistingList">See a non existent list</a>-->
+<!--    </li>-->
+<!--    <li>-->
+<!--        <a href="/restservices/shopper/Gum-Gum">See all lists belonging to a-->
+<!--            non-existent shopper</a>-->
+<!--    </li>-->
+<!--</ul>-->
+<!--<h2>Add Shoppinglist</h2>-->
+<!--<form id="postShopperForm">-->
+<!--    <label for="listname">listname:<input type="text" id="listname" name="listname"/></label><br/>-->
+<!--    <label for="listowner">Eigenaar lijst:<input type="text" id="listowner" name="listowner"/></label>-->
+<!--    <input type="button"  id="postShopperButton"  value="post-it" />-->
+<!--</form>-->
+<!--<h3>Add product to List</h3>-->
+
+<!--<form id="addproductForm">-->
+<!--    <label for="listofproducts">List name:<input type="text" id="listofproducts" name="listofproducts"/></label>-->
+<!--    <label for="productname">Product name:<input type="text" id="productname" name="productname"/></label>-->
+<!--    <label for="amount">Amount<input type="number" id="amount" name="amount"/></label>-->
+<!--    <input type="button" id="addproduct" value="Add product!"/>-->
+<!--</form>-->
+<!--<h4>Add Shopper</h4>-->
+<!--<form id="addshopper">-->
+<!--    <label>Shoppernaam:<input type="text" id="shopper" name="shopper"></label>-->
+<!--    <input type="button" value="shop" id="shop"/>-->
+<!--</form>-->
+
+<!--<h5>Delete SHOPPER</h5>-->
+<!--<form id="DELETEShopperForm" method="post">-->
+<!--    <label for="deleteshoppername">Shoppername:</label><input type="text" id="deleteshoppername" name="name"/>-->
+<!--    <input type="button" id="deleteshopper" value="Post!"/>-->
+<!--</form>-->
+
+
+<!--<h6>Change product name</h6>-->
+<!--<form id="patchProduct">-->
+<!--    <label for="oldname">old name:<input type="text" id="oldname" name="oldname"/></label>-->
+<!--    <label for="newname">new name:<input type="text" id="newname" name="newname"/></label>-->
+<!--    <input type="button" value="rename it" id="patchproductname"/>-->
+<!--</form>-->
+
+<!--<script src="methods.js">-->
+
+<!--</script>-->
+
+
+
+<!--&lt;!&ndash; your POST form here &ndash;&gt;-->
+<!--&lt;!&ndash;<script>&ndash;&gt;-->
+<!--&lt;!&ndash;    window.addEventListener("load", event => { //In plaats van function kan ook () =>&ndash;&gt;-->
+<!--&lt;!&ndash;        document.querySelector("#postShopperButton").addEventListener("click",&ndash;&gt;-->
+<!--&lt;!&ndash;            postmethod);&ndash;&gt;-->
+<!--&lt;!&ndash;    });&ndash;&gt;-->
+
+
+<!--&lt;!&ndash;    //&ndash;&gt;-->
+<!--&lt;!&ndash;    // async function postmethod() {&ndash;&gt;-->
+<!--&lt;!&ndash;    //     console.log("login")&ndash;&gt;-->
+<!--&lt;!&ndash;    //     var formData = new FormData(document.querySelector("#postShopperForm"));&ndash;&gt;-->
+<!--&lt;!&ndash;    //     var encData = new URLSearchParams(formData.entries());&ndash;&gt;-->
+<!--&lt;!&ndash;    //&ndash;&gt;-->
+<!--&lt;!&ndash;    //     var listname = formData.get('listname');&ndash;&gt;-->
+<!--&lt;!&ndash;    //     var listowner = formData.get('listowner');&ndash;&gt;-->
+<!--&lt;!&ndash;    //&ndash;&gt;-->
+<!--&lt;!&ndash;    //     let response = await fetch("restservices/list", {method: "POST", body: encData})&ndash;&gt;-->
+<!--&lt;!&ndash;    //&ndash;&gt;-->
+<!--&lt;!&ndash;    //&ndash;&gt;-->
+<!--&lt;!&ndash;    //     if (response.status === 200) {&ndash;&gt;-->
+<!--&lt;!&ndash;    //         let myJson = await response.json();&ndash;&gt;-->
+<!--&lt;!&ndash;    //         window.location = "inloglid.html.html"&ndash;&gt;-->
+<!--&lt;!&ndash;    //     } else {&ndash;&gt;-->
+<!--&lt;!&ndash;    //         console.log(listname + listowner);&ndash;&gt;-->
+<!--&lt;!&ndash;    //&ndash;&gt;-->
+<!--&lt;!&ndash;    //         // window.location = "VerkeerdeInvoer.html";&ndash;&gt;-->
+<!--&lt;!&ndash;    //     }&ndash;&gt;-->
+<!--&lt;!&ndash;    // }&ndash;&gt;-->
+<!--&lt;!&ndash;    // function secure(){&ndash;&gt;-->
+<!--&lt;!&ndash;    //     console.log("secure")&ndash;&gt;-->
+<!--&lt;!&ndash;    // }&ndash;&gt;-->
+
+<!--&lt;!&ndash;    // function secure(){&ndash;&gt;-->
+<!--&lt;!&ndash;    //   console.log("secure")&ndash;&gt;-->
+<!--&lt;!&ndash;    // }&ndash;&gt;-->
+
+<!--&lt;!&ndash;</script>&ndash;&gt;-->
+<!--</body>-->
+<!--</html>-->
