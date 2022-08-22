@@ -15,7 +15,7 @@ public class ProductResource {
         Product product = Product.getProductByName(oldName);
 
         if (product != null) {
-            if (!newName.isBlank()) {
+            if (newName.isEmpty() ) {
                 product.setName(newName);
                 return Response.ok().build();
             } else return Response.status(Response.Status.BAD_REQUEST).build();
