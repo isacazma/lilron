@@ -10,8 +10,8 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>1,8</maven.compiler.source>
-        <maven.compiler.target>1,8</maven.compiler.target>
+        <maven.compiler.source>15</maven.compiler.source>
+        <maven.compiler.target>15</maven.compiler.target>
     </properties>
     <dependencies>
         <dependency><!-- for unit testing -->
@@ -92,6 +92,14 @@
     <build>
         <pluginManagement>
             <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <configuration>
+                        <source>15</source>
+                        <target>15</target>
+                    </configuration>
+                </plugin>
                 <plugin>
                     <artifactId>maven-war-plugin</artifactId>
                     <version>3.1.0</version>
