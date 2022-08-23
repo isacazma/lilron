@@ -138,7 +138,7 @@
         var encData = new URLSearchParams(formData.entries());
 
         var username = formData.get('gebruikersnaam');
-        let response = await fetch("login", {method: "POST", body: encData})
+        let response = await fetch("restservices/login", {method: "POST", body: encData})
 
 
         if (response.status === 200) {
