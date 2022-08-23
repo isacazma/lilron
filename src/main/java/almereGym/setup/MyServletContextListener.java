@@ -1,13 +1,19 @@
 package almereGym.setup;
 
+import almereGym.Persistence.PersistenceManager;
 import almereGym.model.Berichten;
 import almereGym.model.PriveLes;
 import almereGym.model.Producten;
 import almereGym.model.User;
+import reactor.core.scheduler.Schedulers;
+import reactor.netty.http.HttpResources;
 
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
+
+import java.io.IOException;
+import java.time.Duration;
 
 import static almereGym.model.User.*;
 
@@ -49,23 +55,23 @@ public class MyServletContextListener implements ServletContextListener {
         onlineMedewerker.add(b);
 
 
-//       try {
-//            PersistenceManager.loadWorldFromAzure();
-//        } catch (IOException | ClassNotFoundException e) {
-//            e.printStackTrace();
-//        }
+       try {
+            PersistenceManager.loadWorldFromAzure();
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 
-//    @Override
-//    public void contextDestroyed(ServletContextEvent sce) {
-//        try {
-//            PersistenceManager.saveWorldToAzure();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//
+    @Override
+    public void contextDestroyed(ServletContextEvent sce) {
+        try {
+            PersistenceManager.saveWorldToAzure();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
 //        Schedulers.shutdownNow();
 //        HttpResources.disposeLoopsAndConnectionsLater(Duration.ZERO, Duration.ZERO).block();
-//    }
+    }
 }
 
