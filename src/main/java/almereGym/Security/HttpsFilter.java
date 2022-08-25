@@ -17,7 +17,12 @@ public class HttpsFilter extends HttpFilter {
     @Override
     public void doFilter(HttpServletRequest request, HttpServletResponse response,
                          FilterChain filterChain) throws IOException, ServletException {
-
+        response.setHeader(
+                "Access-Control-Allow-Credentials", "true"
+        );
+        response.setHeader(
+                "Access-Control-Allow-Origin", "*"
+        );
         if (request.getHeader(X_FORWARDED_PROTO) != null) {
             if (request.getHeader(X_FORWARDED_PROTO).equals("http")) {
                 String requestedURL = request.getRequestURL().toString();
