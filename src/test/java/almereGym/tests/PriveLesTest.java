@@ -14,7 +14,7 @@ class PriveLesTest {
     PriveLes lesje;
     PriveLes lesjeTwee;
     almereGym.model.User kevin;
-    User  q;
+    almereGym.model.User  q;
 
     @BeforeEach
     void init() {
@@ -56,6 +56,26 @@ class PriveLesTest {
         assertFalse(verwijderlosseLessen(kevin,lesje));
     }
 
+    @Test
+    public void GebruikerLid() {
+        almereGym.model.User q = new almereGym.model.User("b","b","tien",15);
+        assertFalse(q.getRole().equals("tien"));
+    }
+    @Test
+    public void GebruikerLidTwee() {
+        almereGym.model.User q = new almereGym.model.User("b","b","tien",15);
+        assertTrue(q.getRole().equals("lid"));
+    }
 
 
+    @Test
+    public void Gebruikernr() {
+        almereGym.model.User q = new almereGym.model.User("b","b","tien",1);
+        assertFalse(q.getNr() == 1);
+    }
+    @Test
+    public void GebruikerLidnrTwee() {
+        almereGym.model.User q = new almereGym.model.User("b","b","tien",1);
+        assertFalse(q.getNr() == allUsers.size());
+    }
 }
