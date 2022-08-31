@@ -89,27 +89,27 @@ window.addEventListener("load", function(){
 // window.addEventListener("load", function(){
 //     document.querySelector("#user").addEventListener("click", addNieuweLeden)
 // });
-function addNieuweLeden() {
-
-    let formData= new FormData(document.querySelector("#addNieuweLeden"));
-    let requestData={
-        name: formData.get("userNaam"),
-        pass: formData.get("userWachtwoord"),
-        roll: formData.get("userroll")
-    }
-
-    fetch("restservices/alleUsers", {
-        method: "POST",
-        body: JSON.stringify(requestData),
-        headers: {"Content-type": "application/json"}
-    })
-        .then(response => response.json())
-        .then(data=> console.log(data))
-        .catch(error => console.log(error))
-}
-window.addEventListener("load", function(){
-    document.querySelector("#user").addEventListener("click", addNieuweLeden)
-});
+// function addNieuweLeden() {
+//
+//     let formData= new FormData(document.querySelector("#addNieuweLeden"));
+//     let requestData={
+//         name: formData.get("userNaam"),
+//         pass: formData.get("userWachtwoord"),
+//         roll: formData.get("userroll")
+//     }
+//
+//     fetch("restservices/alleUsers", {
+//         method: "POST",
+//         body: JSON.stringify(requestData),
+//         headers: {"Content-type": "application/json"}
+//     })
+//         .then(response => response.json())
+//         .then(data=> console.log(data))
+//         .catch(error => console.log(error))
+// }
+// window.addEventListener("load", function(){
+//     document.querySelector("#user").addEventListener("click", addNieuweLeden)
+// });
 
 
 
